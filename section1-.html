@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>세 수 중 최솟값 출력결과</title>
+  </head>
+  <body>
+    <script>
+      // 1. 세 수 중 최솟값
+      // function solution(a, b, c) {
+      //   let answer;
+      //   if (a < b) answer = a;
+      //   else answer = b;
+      //   return answer;
+      //   if (c < answer) answer = c;
+      // }
+      // console.log(solution(6, 5, 11));
+
+      // 2. 삼각형 판별
+      // function solution(a, b, c) {
+      //   let answer = "YES",
+      //     max,
+      //     tot = a + b + c;
+      //   if (a < b) max = b;
+      //   else max = a;
+      //   if (max < c) max = c;
+      //   if (tot - max <= max) answer = "NO";
+      //   return answer;
+      // }
+      // console.log(solution(6, 7, 11));
+      // console.log(solution(13, 33, 17));
+
+      // 3. 연필 개수
+      // function solution(n) {
+      //   let answer = Math.ceil(n / 12);
+      //   return answer;
+      // }
+      // console.log(solution(178));
+
+      // 4. 1부터 n까지 합 출력하기
+      // function solution(a) {
+      //   let answer = 0;
+      //   for (let i = 1; i <= a; i++) {
+      //     answer += i;
+      //   }
+      //   return answer;
+      // }
+      // console.log(solution(10));
+
+      // 5. 최솟값 구하기
+      // 내가 푼 답
+      // function solution(...lst) {
+      //   let answer = lst.sort((a, b) => a - b);
+      //   return answer[0];
+      // }
+      // console.log(solution(5, 3, 7, 11, 2, 15, 17));
+
+      // 샘 답
+      // function solution(arr) {
+      //   let answer;
+      //   // let min = Number.MAX_SAFE_INTEGER;
+      //   let min = arr[0];
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (arr[i] < min) min = arr[i];
+      //   }
+      //   answer = min;
+      //   return answer;
+      // }
+      // let arr = [5, 3, 7, 11, 2, 15, 17, 1];
+      // console.log(solution(arr));
+
+      // 6. 홀수
+      // 내가 푼 답
+      // function solution(...lst) {
+      //   let answer;
+      //   let odd = [];
+      //   let sum = 0;
+      //   let min = 0;
+      //   for (let i = 0; i < lst.length; i++) {
+      //     if (lst[i] % 2 !== 0) odd.push(lst[i]);
+      //   }
+      //   odd.forEach(el => (sum += el));
+      //   min = odd.sort((a, b) => a - b)[0];
+      //   return `오름차순된 홀수 합은 ${sum}, 그 중 최솟값은 ${min}`;
+      // }
+      // console.log(solution(12, 77, 38, 41, 53, 92, 85, 6));
+
+      // 샘 답
+      // function solution(arr) {
+      //   let answer = [];
+      //   let sum = 0;
+      //   let min = Number.MAX_SAFE_INTEGER;
+      //   for (let x of arr) {
+      //     if (x % 2 === 1) {
+      //       sum += x;
+      //       if (x < min) min = x;
+      //     }
+      //   }
+      //   answer.push(sum);
+      //   answer.push(min);
+      //   return answer;
+      // }
+      // arr = [12, 77, 38, 41, 53, 92, 85];
+      // console.log(solution(arr));
+
+      // 10부제
+      // function solution(day, arr) {
+      //   let ans = 0;
+      //   for (x of arr) {
+      //     if (x % 10 === day) {
+      //       ans++;
+      //     }
+      //   }
+      //   return ans;
+      // }
+      // arr = [25, 23, 11, 47, 53, 17, 33];
+      // console.log(solution(3, arr));
+    </script>
+  </body>
+</html>
