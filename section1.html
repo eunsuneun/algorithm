@@ -102,10 +102,10 @@
       // arr = [12, 77, 38, 41, 53, 92, 85];
       // console.log(solution(arr));
 
-      // 10부제
+      // 7. 10부제
       // function solution(day, arr) {
       //   let ans = 0;
-      //   for (x of arr) {
+      //   for (let x of arr) {
       //     if (x % 10 === day) {
       //       ans++;
       //     }
@@ -114,6 +114,110 @@
       // }
       // arr = [25, 23, 11, 47, 53, 17, 33];
       // console.log(solution(3, arr));
+
+      // 8. 일곱 난쟁이
+      // function solution(arr) {
+      //   let answer = arr;
+      //   let sum = answer.reduce((a, b) => a + b, 0);
+      //   for (let i = 0; i < arr.length - 1; i++) {
+      //     for (let j = i + 1; j < arr.length; j++) {
+      //       if (sum - (arr[i] + arr[j]) === 100) {
+      //         arr.splice(j, 1);
+      //         arr.splice(i, 1);
+      //       }
+      //     }
+      //   }
+      //   return answer;
+      // }
+      // let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      // console.log(solution(arr));
+
+      // 9. A를 #으로
+
+      // for 반복문
+      // function solution(s) {
+      //   let answer = "";
+      //   for (i = 0; i < s.length; i++) {
+      //     if (s[i] === "A") answer += "#";
+      //     else answer += s[i];
+      //   }
+      //   return answer;
+      //   console.log(solution("BANANA"));
+      // }
+
+      // for of 반복문
+      // function solution(s) {
+      //   let answer = "";
+      //   for (let x of s) {
+      //     if (x === "A") answer += "#";
+      //     else answer += x;
+      //   }
+      //   return answer;
+      // }
+      //  console.log(solution("BANANA"));
+
+      // replace
+      // function solution(s) {
+      //   let ans = s;
+      //   ans = ans.replace(/A/g, "#");
+      //   return ans;
+      // }
+      // console.log(solution("BANANA"));
+
+      // 10. 문자 찾기
+      // function solution(s, t) {
+      //   let answer = 0;
+      //   for (let x of s) {
+      //     if (x === t) {
+      //       answer++;
+      //     }
+      //   }
+      //   return answer;
+      // }
+      // let str = "COMPUTERPROGRAMMING";
+      // console.log(solution(str, "R"));
+
+      // function solution(s, t) {
+      //   let answer = s.split(t).length - 1;
+      //   return answer;
+      // }
+      // let str = "COMPUTERPROGRAMMING";
+      // console.log(solution(str, "R"));
+
+      // 11. 대문자 찾기
+      // function solution(s) {
+      //   let ans = 0;
+      //   for (let x of s) {
+      //     // let num = x.charCodeAt();
+      //     // if (65 <= num && num <= 90) ans++;
+      //     if (x === x.toUpperCase()) ans++;
+      //   }
+      //   return ans;
+      // }
+      // let str = "KoreaTimeGood";
+      // console.log(solution(str));
+
+      // 12. 대문자로 통일
+      // function solution(s) {
+      //   ans = s.toUpperCase();
+      //   return ans;
+      // }
+      // const str = "ItisTimeToStudy";
+      // console.log(solution(str));
+
+      function solution(s) {
+        let answer = "";
+        for (let x of s) {
+          let num = x.charCodeAt();
+          if (97 <= num && num <= 122) answer += String.fromCharCode(num - 32);
+          else answer += x;
+          // if (x === x.toLowerCase()) answer += x.toUpperCase();
+          // else answer += x;
+        }
+        return answer;
+      }
+      let str = "ItisTimeToStudyddd";
+      console.log(solution(str));
     </script>
   </body>
 </html>
