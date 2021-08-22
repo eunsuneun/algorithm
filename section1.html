@@ -47,7 +47,7 @@
       // console.log(solution(10));
 
       // 5. 최솟값 구하기
-      // 내가 푼 답
+      // 답
       // function solution(...lst) {
       //   let answer = lst.sort((a, b) => a - b);
       //   return answer[0];
@@ -205,18 +205,142 @@
       // const str = "ItisTimeToStudy";
       // console.log(solution(str));
 
+      // function solution(s) {
+      //   let answer = "";
+      //   for (let x of s) {
+      //     let num = x.charCodeAt();
+      //     if (97 <= num && num <= 122) answer += String.fromCharCode(num - 32);
+      //     else answer += x;
+      //     // if (x === x.toLowerCase()) answer += x.toUpperCase();
+      //     // else answer += x;
+      //   }
+      //   return answer;
+      // }
+      // let str = "ItisTimeToStudyddd";
+      // console.log(solution(str));
+
+      // 13. 대문자로 변환
+      // function solution(s) {
+      //   let answer = "";
+      //   for (let x of s) {
+      //     if (x === x.toUpperCase()) answer += x.toLowerCase();
+      //     else answer += x.toUpperCase();
+      //   }
+      //   return answer;
+      // }
+      // console.log(solution("StuDY"));
+
+      // 14. 가잔 긴 문자열
+      // 내가 푼 답
+      // function solution(arr) {
+      //   let answer = "";
+      //   let min = 0;
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (min < arr[i].length) {
+      //       min = arr[i].length;
+      //       answer = arr[i];
+      //     }
+      //   }
+      //   return answer;
+      // }
+      // let str = ["hi", "teacher", "time", "student", "beautiful", "good"];
+      // console.log(solution(str));
+
+      // 샘 답
+      // function solution(s) {
+      //   let answer,
+      //     max = Number.MIN_SAFE_INTEGER;
+      //   for (let x of s) {
+      //     if (x.length > max) {
+      //       max = x.length;
+      //       answer = x;
+      //     }
+      //   }
+      //   return answer;
+      // }
+      // let str = ["hi", "teacher", "time", "student", "beautiful", "good"];
+      // console.log(solution(str));
+
+      // 15. 가운데 문자 출력
+      // 내가 푼 답
+      // function solution(s) {
+      //   let answer = "";
+      //   if (s.length % 2 !== 0) {
+      //     answer += s[Math.floor(s.length / 2)];
+      //   } else {
+      //     answer += s[Math.floor(s.length / 2 - 1)];
+      //     answer += s[Math.floor(s.length / 2)];
+      //   }
+      //   return answer;
+      // }
+      // console.log(solution("study"));
+      // console.log(solution("good"));
+
+      // 샘 답
+      // function solution(s) {
+      //   let answer = "";
+      //   let mid = Math.floor(s.length / 2);
+      //   if (s.length % 2 == 1) answer = s.substring(mid, mid + 1);
+      //   else answer = s.substring(mid - 1, mid + 1);
+      //   return answer;
+      // }
+      // console.log(solution("study"));
+      // console.log(solution("good"));
+
+      // function solution(s) {
+      //   let answer = "";
+      //   let mid = Math.floor(s.length / 2);
+      //   if (s.length % 2 == 1) answer = s.substr(mid, 1);
+      //   else answer = s.substr(mid - 1, 2);
+      //   return answer;
+      // }
+      // console.log(solution("study"));
+      // console.log(solution("good"));
+
+      // 16. 중복 문자 제거
+      // function solution(s) {
+      //   let answer = "";
+      //   for (let i = 0; i < s.length; i++) {
+      //     // console.log(s[i], i, s.indexOf(s[i]));
+      //     if (s.indexOf(s[i]) === i) answer += s[i];
+      //   }
+      //   return answer;
+      // }
+      // console.log(solution("ksekkset"));
+
+      // k 개수 찾기
+      // function solution(s) {
+      //   let answer = 0;
+      //   let pos = s.indexOf("k");
+      //   while (pos !== -1) {
+      //     answer++;
+      //     pos = s.indexOf("k", pos + 1);
+      //   }
+      //   return answer;
+      // }
+      // console.log(solution("ksekkset"));
+
+      // 17. 중복 단어 제거
+      // 내가 푼 답
+      // function solution(s) {
+      //   let answer = [];
+      //   for (let i = 0; i < s.length; i++) {
+      //     if (s.indexOf(s[i]) === i) answer.push(s[i]);
+      //   }
+      //   return answer;
+      // }
+      // let str = ["good", "time", "good", "time", "student"];
+      // console.log(solution(str));
+
+      // 샘 답
       function solution(s) {
-        let answer = "";
-        for (let x of s) {
-          let num = x.charCodeAt();
-          if (97 <= num && num <= 122) answer += String.fromCharCode(num - 32);
-          else answer += x;
-          // if (x === x.toLowerCase()) answer += x.toUpperCase();
-          // else answer += x;
-        }
+        let answer;
+        answer = s.filter((v, i) => {
+          return s.indexOf(v) === i;
+        });
         return answer;
       }
-      let str = "ItisTimeToStudyddd";
+      let str = ["good", "time", "good", "time", "student"];
       console.log(solution(str));
     </script>
   </body>
