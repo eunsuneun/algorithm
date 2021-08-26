@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>section3 - 문자열 탐색</title>
+  </head>
+  <body>
+    <script>
+      // 1. 회문 문자열
+      // for문
+      // function solution(s) {
+      //   let ans = 'YES';
+      //   s = s.toLowerCase();
+      //   let len = s.length;
+      //   for (i = 0; i < Math.floor(len / 2); i++) {
+      //     if (s[i] !== s[len - i - 1]) return 'NO';
+      //   }
+      //   return ans;
+      // }
+      // console.log(solution('govsoG'));
+
+      // split(), reverse(), join()
+      // function solution(s) {
+      //   let ans = 'YES';
+      //   s = s.toLowerCase();
+      //   if (s !== s.split('').reverse().join('')) return 'NO';
+      //   return ans;
+      // }
+      // console.log(solution('gooG'));
+
+      // 2. 유효한 팰린드롬
+      // function solution(s) {
+      //   let ans = 'YES';
+      //   s = s.toLowerCase().replace(/[^a-z]/g, '');
+      //   if (s !== s.split('').reverse().join('')) return 'NO';
+      //   return ans;
+      // }
+      // console.log(solution('found7, time: study; Yduts; emit, 7Dnuof'));
+
+      // 3. 숫자만 추출
+
+      // charCodeAt()
+      // function solution(s) {
+      //   let ans = '';
+      //   for (let x of s) {
+      //     let num = x.charCodeAt();
+      //     if (48 <= num && num <= 57) ans += x;
+      //   }
+      //   return parseInt(ans);
+      // }
+      // console.log(solution('g0en2T0s8eSoft'));
+
+      // isNaN, parseInt()
+      // function solution(s) {
+      //   let ans = '';
+      //   for (let x of s) {
+      //     if (!isNaN) ans += x;
+      //   }
+      //   return parseInt(ans);
+      // }
+      // console.log(solution('g0en2T0s8eSoft'));
+
+      // parseInt() 사용 X
+      function solution(s) {
+        let ans = 0;
+        for (let x of s) {
+          if (!isNaN) ans = ans * 10 + Number(x);
+        }
+      }
+      console.log(solution('g0en2T0s8eSoft'));
+    </script>
+  </body>
+</html>
