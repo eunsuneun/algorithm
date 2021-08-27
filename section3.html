@@ -1,72 +1,124 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>section3 - 문자열 탐색</title>
-  </head>
-  <body>
-    <script>
-      // 1. 회문 문자열
-      // for문
-      // function solution(s) {
-      //   let ans = 'YES';
-      //   s = s.toLowerCase();
-      //   let len = s.length;
-      //   for (i = 0; i < Math.floor(len / 2); i++) {
-      //     if (s[i] !== s[len - i - 1]) return 'NO';
-      //   }
-      //   return ans;
-      // }
-      // console.log(solution('govsoG'));
 
-      // split(), reverse(), join()
-      // function solution(s) {
-      //   let ans = 'YES';
-      //   s = s.toLowerCase();
-      //   if (s !== s.split('').reverse().join('')) return 'NO';
-      //   return ans;
-      // }
-      // console.log(solution('gooG'));
+<head>
+  <meta charset="UTF-8" />
+  <title>section3 - 문자열 탐색</title>
+</head>
 
-      // 2. 유효한 팰린드롬
-      // function solution(s) {
-      //   let ans = 'YES';
-      //   s = s.toLowerCase().replace(/[^a-z]/g, '');
-      //   if (s !== s.split('').reverse().join('')) return 'NO';
-      //   return ans;
-      // }
-      // console.log(solution('found7, time: study; Yduts; emit, 7Dnuof'));
+<body>
+  <script>
+    // 1. 회문 문자열
+    // for문
+    // function solution(s) {
+    //   let ans = 'YES';
+    //   s = s.toLowerCase();
+    //   let len = s.length;
+    //   for (i = 0; i < Math.floor(len / 2); i++) {
+    //     if (s[i] !== s[len - i - 1]) return 'NO';
+    //   }
+    //   return ans;
+    // }
+    // console.log(solution('govsoG'));
 
-      // 3. 숫자만 추출
+    // split(), reverse(), join()
+    // function solution(s) {
+    //   let ans = 'YES';
+    //   s = s.toLowerCase();
+    //   if (s !== s.split('').reverse().join('')) return 'NO';
+    //   return ans;
+    // }
+    // console.log(solution('gooG'));
 
-      // charCodeAt()
-      // function solution(s) {
-      //   let ans = '';
-      //   for (let x of s) {
-      //     let num = x.charCodeAt();
-      //     if (48 <= num && num <= 57) ans += x;
-      //   }
-      //   return parseInt(ans);
-      // }
-      // console.log(solution('g0en2T0s8eSoft'));
+    // 2. 유효한 팰린드롬
+    // function solution(s) {
+    //   let ans = 'YES';
+    //   s = s.toLowerCase().replace(/[^a-z]/g, '');
+    //   if (s !== s.split('').reverse().join('')) return 'NO';
+    //   return ans;
+    // }
+    // console.log(solution('found7, time: study; Yduts; emit, 7Dnuof'));
 
-      // isNaN, parseInt()
-      // function solution(s) {
-      //   let ans = '';
-      //   for (let x of s) {
-      //     if (!isNaN) ans += x;
-      //   }
-      //   return parseInt(ans);
-      // }
-      // console.log(solution('g0en2T0s8eSoft'));
+    // 3. 숫자만 추출
 
-      // parseInt() 사용 X
-      function solution(s) {
-        let ans = 0;
-        for (let x of s) {
-          if (!isNaN) ans = ans * 10 + Number(x);
+    // charCodeAt()
+    // function solution(s) {
+    //   let ans = '';
+    //   for (let x of s) {
+    //     let num = x.charCodeAt();
+    //     if (48 <= num && num <= 57) ans += x;
+    //   }
+    //   return parseInt(ans);
+    // }
+    // console.log(solution('g0en2T0s8eSoft'));
+
+    // isNaN, parseInt()
+    // function solution(s) {
+    //   let ans = '';
+    //   for (let x of s) {
+    //     if (!isNaN) ans += x;
+    //   }
+    //   return parseInt(ans);
+    // }
+    // console.log(solution('g0en2T0s8eSoft'));
+
+    // parseInt() 사용 X
+    // function solution(s) {
+    //   let ans = 0;
+    //   for (let x of s) {
+    //     if (!isNaN) ans = ans * 10 + Number(x);
+    //   }
+    // }
+    // console.log(solution('g0en2T0s8eSoft'));
+
+    // 4. 가장 짧은 문자거리
+    // function solution(s, t) {
+    //   let ans = [];
+    //   let p = 1000;
+    //   for (let x of s) {
+    //     if (x === t) {
+    //       p = 0;
+    //       ans.push(p);
+    //     }
+    //     else {
+    //       p++;
+    //       ans.push(p);
+    //     }
+    //   }
+    //   p = 1000;
+    //   for (let i = s.length - 1; i >= 0; i--) {
+    //     if (s[i] === t) {
+    //       p = 0;
+    //     }
+    //     else {
+    //       p++;
+    //       ans[i] = Math.min(ans[i], p);
+    //     }
+    //   }
+    //   return ans;
+    // }
+    // let s = 'teachermode'
+    // let t = 'e'
+    // console.log(solution(s, t))
+
+    // 5. 문자열 압축
+    function solution(s) {
+      let ans = '';
+      let cnt = 1;
+      s = s + ' ';
+      for (let i = 0; i < s.length - 1; i++) {
+        if (s[i] === s[i + 1]) cnt++;
+        else {
+          ans += s[i];
+          if (cnt > 1) {
+            ans += cnt;
+          }
+          cnt = 1;
         }
       }
-      console.log(solution('g0en2T0s8eSoft'));
-    </script>
-  </body>
+      return ans;
+    }
+    console.log(solution('KKHSSSSSSSE'))
+  </script>
+</body>
+
 </html>
